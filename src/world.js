@@ -2,6 +2,8 @@ import * as THREE from "https://unpkg.com/three@0.126.1/build/three.module.js";
 //import {OrbitControls} from "https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js";
 import $ from "jquery";
 import * as TWEEN from "@tweenjs/tween.js";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const mouse={
   x: undefined,
@@ -89,8 +91,12 @@ let frame=0;
 const clock = new THREE.Clock();
 
 addEventListener("mousemove", (event) => {
-  mouse.x = event.clientX / innerWidth *2 -1;
-  mouse.y = -1 * event.clientY/innerHeight * 2 + 1;
+  const x=event.clientX;
+  const y=event.clientY;
+  $("#cursor").css({"left": x, "top":y});
+
+  mouse.x = x / innerWidth *2 -1;
+  mouse.y = -1 *y/innerHeight * 2 + 1;
 })
 
 //sizes
@@ -115,38 +121,30 @@ addEventListener('resize', () =>
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
 })
 
-//Listens to mouse scroll
-let currPos=0;
-$(window).bind('mousewheel DOMMouseScroll', function(event){
-    if ((event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0)) {
-        if (currPos>0){
-            currPos--;
-            if (currPos==9){
-              moveTo(-1.5);
-            }
-        }
-    }
-    else {
-        currPos++;
-        if (currPos==9){
-          moveTo(1.5);
-        }
-    }
 
-    console.log(currPos);
-});
-
-function moveTo(dx){
-  const coords = {x: sphereMesh.position.x, y: sphereMesh.position.y}
+//1.45, -.16, 0
+function moveTo(toX){
+  const coords = {x: sphereMesh.position.x}
   new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-    .to({x: coords.x+dx, y: coords.y}, 3300) // Move to (300, 200) in 1 second.
-    .easing(TWEEN.Easing.Cubic.InOut) // Use an easing function to make the animation smooth.
+    .to({x: toX}, 3000) // Move to (300, 200) in 1 second.
+    .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
     .onUpdate(() => {
-      sphereMesh.position.set(coords.x, coords.y, 0)
+      sphereMesh.position.set(coords.x, -.16, 0)
     })
     .start() 
 }
 
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.create({
+  trigger: $("#one"),
+  onEnter: () => moveTo(2.64),
+});
+
+ScrollTrigger.create({
+  trigger: $("#start"),
+  onEnterBack: () => moveTo(1.45),
+  onLeave: () => moveTo(2.64)
+});
 
 
 function animate(){
@@ -161,14 +159,6 @@ function animate(){
   //Moves sphere based on mouse position
   sphereMesh.rotation.x = mouse.y * (.05);
   sphereMesh.rotation.y = -1 * mouse.x * (.05);
-  
-  //Animating the box
-  /*
-  boxMesh.rotation.z+=.01;
-  boxMesh.rotation.y+=.01;*/
-
-  //sphereMesh.rotation.z+=.005;
-  //sphereMesh.rotation.y+=.005;
 
   //Animating the sphere
   const {array, originalPosition, randomValues} = sphereMesh.geometry.attributes.position;
@@ -182,3 +172,4 @@ function animate(){
 }
 
 animate();
+
