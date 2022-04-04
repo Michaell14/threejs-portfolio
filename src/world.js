@@ -11,7 +11,8 @@ const mouse={
 }
 
 // Canvas
-const canvas = document.querySelector('canvas.webgl')
+const canvas = document.querySelector('canvas.webgl');
+gsap.registerPlugin(ScrollTrigger);
 
 //const raycaster = new THREE.Raycaster();
 const scene=new THREE.Scene();
@@ -21,33 +22,15 @@ const renderer = new THREE.WebGLRenderer({
 })
 
 //Set camera position to see objects
-//camera.position.z=2;
 camera.position.set(0,0, .7);
 
 renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(devicePixelRatio);
 
-//new OrbitControls(camera, renderer.domElement);
-//document.body.appendChild(renderer.domElement);
-
-//Creating a box
-/*
-const boxGeometry = new THREE.BoxGeometry(1,1,1);
-const boxMaterial=new THREE.MeshBasicMaterial({color: 0x00ff00})
-const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
-scene.add(boxMesh);*/
-
 //Creating a sphere
-
 const sphereGeometry = new THREE.SphereGeometry(1,24, 10);
 const sphereMaterial=new THREE.MeshBasicMaterial({ wireframe: true });
 var sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
-/*
-const sphereGeometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
-const material = new THREE.PointsMaterial({
-  size: 0.005
-})
-const sphereMesh = new THREE.Points(sphereGeometry,material);*/
 
 sphereMesh.position.set(1.45, -.16, 0)
 scene.add(sphereMesh);
@@ -73,14 +56,6 @@ for (let i=0; i<array.length; i++){
 sphereMesh.geometry.attributes.position.randomValues = randomValues;
 sphereMesh.geometry.attributes.position.originalPosition = sphereMesh.geometry.attributes.position.array;
 
-//color attribute addition
-/*
-const colors = [];
-for (let i=0; i<sphereMesh.geometry.attributes.position.count; i++){
-  colors.push(0,.19,.4);
-}
-
-sphereMesh.geometry.setAttribute("color", new THREE.BufferAttribute(new Float32Array(colors), 3))*/
 
 //Creating a light
 const light = new THREE.DirectionalLight(0xffffff, 1);
@@ -89,21 +64,11 @@ scene.add(light);
 
 let frame=0;
 
-addEventListener("mousemove", (event) => {
-  const x=event.clientX;
-  const y=event.clientY;
-  //$("#cursor").css({"left": x, "top":y});
-
-  mouse.x = x / innerWidth *2 -1;
-  mouse.y = -1 *y/innerHeight * 2 + 1;
-})
-
 //sizes
 const sizes = {
   width: innerWidth,
   height: innerHeight
 }
-
 
 addEventListener('resize', () =>
 {
@@ -120,20 +85,24 @@ addEventListener('resize', () =>
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
 })
 
+addEventListener("mousemove", (event) => {
+  mouse.x = event.clientX / innerWidth *2 -1;
+  mouse.y = -1 *event.clientY/innerHeight * 2 + 1;
+})
+
 
 //1.45, -.16, 0
 function moveTo(toX){
   const coords = {x: sphereMesh.position.x}
   new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-    .to({x: toX}, 3000) // Move to (300, 200) in 1 second.
-    .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
+    .to({x: toX}, 3000) // Moves to a new location
+    .easing(TWEEN.Easing.Quadratic.InOut)
     .onUpdate(() => {
       sphereMesh.position.set(coords.x, -.16, 0)
-    })
-    .start() 
+    }).start() 
 }
 
-gsap.registerPlugin(ScrollTrigger);
+//Enters left person
 gsap.to("#person1",{
   scrollTrigger: {
     trigger: "#personup",
@@ -143,6 +112,7 @@ gsap.to("#person1",{
   duration:1
 });
 
+//Enters right person
 gsap.to("#person2",{
   scrollTrigger: {
     trigger: "#personright",
@@ -152,6 +122,7 @@ gsap.to("#person2",{
   duration:1
 });
 
+//Enter/exits sphere
 ScrollTrigger.create({
   trigger: $("#start"),
   onEnterBack: () => moveTo(1.45),
@@ -159,16 +130,11 @@ ScrollTrigger.create({
 });
 
 
-
 function animate(){
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
   frame+=.01;
-  /*
-  sphereMesh.rotation.y+=.0001;
-  sphereMesh.rotation.z+=.0001;*/
-
-  //const elapsedTime = clock.getElapsedTime();
+  
   //Moves sphere based on mouse position
   sphereMesh.rotation.x = mouse.y * (.05);
   sphereMesh.rotation.y = -1 * mouse.x * (.05);

@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import $ from "jquery"
+import $ from "jquery";
 
 const descriptions=["Developer", "Athlete", "Student"]
 let i=0;
