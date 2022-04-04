@@ -54,14 +54,6 @@ p{
   z-index:2;
 }
 
-a:hover ~ #cursor{
-  width: 100px;
-  height: 100px;
-
-  border: 2px dashed #fff;
-  animation: animate 5s linear infinite;
-}
-
 @keyframes animate{
   0%{
     transform: translate(-50%, -50%) rotate(0deg);
@@ -72,7 +64,7 @@ a:hover ~ #cursor{
 
 @keyframes strike{
   0%   { width : 0%; }
-  40% { width: 101%; }
+  30% { width: 101%; }
 }
 .strike {
   position: relative;
@@ -86,7 +78,7 @@ a:hover ~ #cursor{
   height: 6.3px;
   background-color: #FFE53B;
   background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
-  animation: strike 8s cubic-bezier(0.65, 0, 0.35, 1) infinite forwards;
+  animation: strike 7s cubic-bezier(0.65, 0, 0.35, 1) infinite forwards;
 }
 
 .underline {
@@ -158,6 +150,10 @@ background-image: linear-gradient(90deg, #08AEEA 0%, #2AF598 100%);
 
 #two{
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2160' height='560' preserveAspectRatio='none' viewBox='0 0 2160 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1050%26quot%3b)' fill='none'%3e%3cpath d='M1170.6884908641887 44.35763276245366L1069.4625092974568 120.63688114769522 1145.7417576826983 221.86286271442702 1246.9677392494302 145.58361432918548z' fill='rgba(158%2c 183%2c 147%2c 0.41)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M439.4120324058618 272.0365109648112L435.1417845114363 353.5176947288282 559.4986841046745 319.182474688458z' fill='rgba(158%2c 183%2c 147%2c 0.41)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1295.27%2c198.635C1310.598%2c199.473%2c1326.822%2c194.472%2c1334.543%2c181.204C1342.3%2c167.876%2c1338.09%2c151.614%2c1330.419%2c138.237C1322.7%2c124.776%2c1310.777%2c112.172%2c1295.27%2c112.722C1280.366%2c113.251%2c1270.895%2c127.266%2c1264.193%2c140.588C1258.297%2c152.308%2c1256.602%2c165.715%2c1262.794%2c177.281C1269.348%2c189.523%2c1281.405%2c197.877%2c1295.27%2c198.635' fill='rgba(158%2c 183%2c 147%2c 0.41)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M826.436%2c355.198C865.485%2c352.988%2c897.899%2c329.215%2c918.51%2c295.975C940.536%2c260.453%2c954.072%2c217.33%2c934.976%2c180.151C914.455%2c140.197%2c871.325%2c118.261%2c826.436%2c116.708C778.466%2c115.049%2c728.375%2c130.778%2c704.064%2c172.165C679.499%2c213.985%2c687.39%2c267.211%2c714.347%2c307.531C738.533%2c343.707%2c782.99%2c357.657%2c826.436%2c355.198' fill='rgba(158%2c 183%2c 147%2c 0.41)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M2098.87740840088 129.0121692533994L2028.1308362851319-16.391338451801573 1947.0545308236922 99.39762558696857z' fill='rgba(158%2c 183%2c 147%2c 0.41)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1762.748%2c204.88C1786.416%2c206.921%2c1810.587%2c196.903%2c1822.933%2c176.607C1835.72%2c155.586%2c1834.63%2c128.762%2c1821.834%2c107.746C1809.523%2c87.527%2c1786.354%2c75.994%2c1762.748%2c77.762C1741.665%2c79.341%2c1726.626%2c96.64%2c1717.232%2c115.581C1708.977%2c132.226%2c1709.767%2c151.023%2c1718.204%2c167.577C1727.63%2c186.07%2c1742.068%2c203.097%2c1762.748%2c204.88' fill='rgba(158%2c 183%2c 147%2c 0.41)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1542.2465861591036 319.4424180187478L1635.4506710680043 395.06478424461756 1653.6698016660696 291.73896011456935z' fill='rgba(158%2c 183%2c 147%2c 0.41)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1050'%3e%3crect width='2160' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+}
+
+#three{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2160' height='560' preserveAspectRatio='none' viewBox='0 0 2160 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1108%26quot%3b)' fill='none'%3e%3cpath d='M1219.550803462789-3.916762800230355L1164.415514242994 77.82466498469879 1246.1569420279232 132.95995420449367 1301.292231247718 51.218526419564526z' fill='rgba(159%2c 147%2c 183%2c 0.41)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M277.6776771282726 188.28330710567556L129.85876732815098 214.34776916234793 155.92322938482334 362.1666789624695 303.74213918494496 336.10221690579715z' fill='rgba(159%2c 147%2c 183%2c 0.41)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1658.616065678051 99.36101810349075L1581.5184662135516 43.34633328540872 1602.601380859969 176.45861756799002z' fill='rgba(159%2c 147%2c 183%2c 0.41)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M598.2776041851492 432.8619293011595L506.85307466451343 469.79983691213687 635.2155117961266 524.2864588217953z' fill='rgba(159%2c 147%2c 183%2c 0.41)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M263.61%2c237.734C294.305%2c237.162%2c317.542%2c213.687%2c333.148%2c187.249C349.089%2c160.243%2c359.338%2c128.015%2c344.768%2c100.245C329.322%2c70.804%2c296.751%2c52.05%2c263.61%2c54.709C233.794%2c57.101%2c216.642%2c85.453%2c202.255%2c111.678C188.63%2c136.515%2c177.033%2c164.457%2c189.431%2c189.929C203.229%2c218.277%2c232.087%2c238.322%2c263.61%2c237.734' fill='rgba(159%2c 147%2c 183%2c 0.41)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1108'%3e%3crect width='2160' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
 }
 
 
