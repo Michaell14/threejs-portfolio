@@ -88,12 +88,11 @@ light.position.set(0, .5, 3);
 scene.add(light);
 
 let frame=0;
-const clock = new THREE.Clock();
 
 addEventListener("mousemove", (event) => {
   const x=event.clientX;
   const y=event.clientY;
-  $("#cursor").css({"left": x, "top":y});
+  //$("#cursor").css({"left": x, "top":y});
 
   mouse.x = x / innerWidth *2 -1;
   mouse.y = -1 *y/innerHeight * 2 + 1;
@@ -135,16 +134,30 @@ function moveTo(toX){
 }
 
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.create({
-  trigger: $("#one"),
-  onEnter: () => moveTo(2.64),
+gsap.to("#person1",{
+  scrollTrigger: {
+    trigger: "#personup",
+    start: "top bottom"
+  },
+  x: 500,
+  duration:1
+});
+
+gsap.to("#person2",{
+  scrollTrigger: {
+    trigger: "#personright",
+    start: "top bottom"
+  },
+  x: -500,
+  duration:1
 });
 
 ScrollTrigger.create({
   trigger: $("#start"),
   onEnterBack: () => moveTo(1.45),
-  onLeave: () => moveTo(2.64)
+  onLeave: () => moveTo(2.67)
 });
+
 
 
 function animate(){
