@@ -5,5 +5,5 @@ anime({
     translateY: -40,
     opacity:1,
     easing: 'easeOutSine',
-    duration: 1500
+    duration: 1900
   });
