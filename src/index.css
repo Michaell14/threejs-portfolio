@@ -81,9 +81,9 @@ a:hover ~ #cursor{
 .strike::after {
   content: ' ';
   position: absolute;
-  top: 55%;
+  top: 100%;
   left: 0;
-  height: 6px;
+  height: 6.3px;
   background-color: #FFE53B;
   background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
   animation: strike 8s cubic-bezier(0.65, 0, 0.35, 1) infinite forwards;

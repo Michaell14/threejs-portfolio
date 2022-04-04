@@ -31,7 +31,7 @@ function App() {
         <Box h={"100vh"} className="item" id="one">
           <Flex justify={"space-around"} mx={10}>
             <Box maxW={"500px"}>
-              <Text fontSize={"45px"} className="title"><a href="https://github.com/Michaell14" target="_blank" rel="noreferrer" className="titleUnderline" id="underline3">Encryption Visualizer</a></Text>
+              <Text fontSize={"45px"} className="title"><a href="https://encryption-visualizer.vercel.app/" target="_blank" rel="noreferrer" className="titleUnderline" id="underline3">Encryption Visualizer</a></Text>
               <Text fontSize={"large"} my={5} className="description">This project was created to help visualize different encryption ciphers.</Text>
               <Flex justify={"center"} mt={5}>
                 <Box className={"tag"} mr={5}>Anime.js</Box>
@@ -57,7 +57,7 @@ function App() {
             </Box>
 
             <Box maxW={"500px"}>
-              <Text fontSize={"5xl"} className="title"><a href="https://github.com/Michaell14" target="_blank" rel="noreferrer" className="titleUnderline" id="underline4">Unbe-leaf-able AI</a></Text>
+              <Text fontSize={"5xl"} className="title"><a href="https://sites.google.com/umd.edu/ai4allproject-showcase2021/leaves" target="_blank" rel="noreferrer" className="titleUnderline" id="underline4">Unbe-leaf-able AI</a></Text>
               <Text fontSize={"large"} my={5} className="description">This research project was created during my participation 2021 AI4ALL program at the University of Maryland. This project uses Machine learning and Image recognition to differentiate between 185 different species of leaves. We tested the accuracy of using the Resnet18 and VGG11 models over 5 Epochs.</Text>
             
               <Flex justify={"center"} mt={5}>
@@ -72,7 +72,7 @@ function App() {
           <Flex justify={"space-around"} mx={10}>
 
           <Box maxW={"500px"}>
-              <Text fontSize={"5xl"} className="title"><a href="https://github.com/Michaell14" target="_blank" rel="noreferrer" className="titleUnderline" id="underline5">Codele</a></Text>
+              <Text fontSize={"5xl"} className="title"><a href="https://codele.vercel.app/" target="_blank" rel="noreferrer" className="titleUnderline" id="underline5">Codele</a></Text>
               <Text fontSize={"large"} my={5} className="description">This is a parody of the popular, Worlde, but with different coding languages</Text>
               <Flex justify={"center"} mt={5}>
                 <Box className={"tag"} mr={5}>Anime.js</Box>
