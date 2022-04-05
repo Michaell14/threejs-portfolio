@@ -73,7 +73,7 @@ function App() {
 
           <Box maxW={"500px"}>
               <Text fontSize={"5xl"} className="title"><a href="https://codele.vercel.app/" target="_blank" rel="noreferrer" className="titleUnderline" id="underline5">Codele</a></Text>
-              <Text fontSize={"large"} my={5} className="description">This is a parody of the popular, Worlde, but with different coding languages</Text>
+              <Text fontSize={"large"} my={5} className="description">This is a parody of the New York Times, Wordle, but with different coding languages</Text>
               <Flex justify={"center"} mt={5}>
                 <Box className={"tag"} mr={5}>Anime.js</Box>
                 <Box className={"tag"} mr={5}>Chakra UI</Box>
