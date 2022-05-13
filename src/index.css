@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anybody:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 * {
   margin: 0;
@@ -11,6 +12,16 @@
 body{
   overflow-x: hidden;
   height: 100vh;
+}
+
+.title, .description{
+  /*font-family: 'Lora', serif;*/
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+p{
+  /*font-family: 'BIZ UDPMincho', serif;*/
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .webgl
@@ -27,13 +38,6 @@ body{
     width: 100%;
 }
 
-p{
-  font-family: 'BIZ UDPMincho', serif;
-}
-
-.title, .description{
-  font-family: 'Lora', serif;
-}
 
 
 #about{

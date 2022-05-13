@@ -14,10 +14,13 @@ function App() {
       {/*<div id="cursor"></div>*/}
 
       <Box className="container">
-        <Box h={"100vh"} mt={"40px"} pr={"25%"} w={"100%"} id="starting" opacity={0}>
-            <Text fontSize="5xl" pt={"28vh"} id="start">Hey! <br/>I&apos;m Michael Li, a...</Text>
+        <Box h={"100vh"} mt={"40px"} pr={"30%"} w={"100%"} id="starting" opacity={0}>
+
             
-            <Text fontSize={"5xl"}><span className="strike">Student</span></Text>
+              <Text fontSize="50px" pt={"28vh"} id="start">Hey! <br/>I&apos;m Michael Li, a...</Text>
+              <Text fontSize={"50px"}><span className="strike">Student</span></Text>
+        
+            
           
 
             <Flex mx={"auto"} w={"200px"} mt={5} justify={"space-around"}>
